@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@brazilian-utils/brazilian-utils": "^1.0.0-rc.12",
+    "cep-promise": "^4.4.1"
+  }
+}

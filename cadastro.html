@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/cadastro.css">
 
+  <!-- SCRIPTS -->
+  <script  src="js/cadastro.js"></script>
+
   <!-- FONTE -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,13 +20,12 @@
     
   <!-- ICONS -->
   <script src="https://kit.fontawesome.com/9189799d2b.js" crossorigin="anonymous"></script>
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <header>
     <nav id="navbar">
       <a class="nav-brand" href="index.html">BicoIn</a>
-
       <ul class="nav-list">
         <li class="nav-item">
           <a href="index.html">Início</a>
@@ -38,109 +40,47 @@
   </header>
   <main>
     <section id="cadastro">
-      <form class="form-cadastro">
+      <form class="form-cadastro" id="form" onsubmit="verifyForm(event)">
         <h1>CADASTRO</h1> <br>
         <div class="form-row">
           <div class="form-group">
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name">
+            <label for="name" class="warning"><small>Insira seu nome completo</small></label>
           </div>
-          <div class="form-group">
-            <label for="Sobrenome">Sobrenome:</label>
-            <input type="text" id="sobrenome" name="sobrenome">
-          </div> 
           <div class="form-group">
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email">
+            <label for="name" class="warning"><small>Insira seu e-mail</small></label>
           </div>
-          <div class="form-group">
-            <label for="Confirmar email">Confirmar e-mail:</label>
-            <input type="email" id="email" name="email">
-          </div>
-          <div class="form-group">
+          <div class="form-group input-icon">
             <label for="password">Senha:</label>
+            <i class="material-icons" onclick="showPassword(event)" id="passIcon">visibility</i>
             <input type="password" id="password" name="password">
-          </div>
-          <div class="form-group">
-            <label for="Confirmar senha">Confirmar senha:</label>
-            <input type="password" id="password" name="password">
-          </div>
-          <div class="form-group">
-            <label for="seletor">Selecione:</label>
-              <select id="selection" name="selection">
-                  <option value="" selected disabled>Selecione</option>
-                  <option value="prestador">Prestador</option>
-                  <option value="contratante">Contratante</option>
-              </select>
+            <label for="name" class="warning"><small>Insira sua senha</small></label>
           </div>
           <div class="form-group">
             <label for="cep">CEP:</label>
             <input type="text" id="cep" name="cep">
-          </div>
-          <div class="form-group">
-            <label for="rua">Rua:</label>
-            <input type="text" id="rua" name="rua">
-          </div>
-          <div class="form-group">
-            <label for="bairro">Bairro:</label>
-            <input type="text" id="bairro" name="bairro">
+            <label for="name" class="warning"><small>Insira seu cep</small></label>
           </div>
           <div class="form-group">
             <label for="numero">Número:</label>
-            <input type="text" id="numero" name="numero">
-          </div>
-          <div class="form-group">
-            <label for="complemento">Complemento:</label>
-            <input type="text" id="complemento" name="complemento">
-          </div>
-          <div class="form-group">
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade">
-          </div>
-          <div class="form-group">
-            <label for="seletor">Estado:</label>
-              <select id="selection" name="selection">
-                <option value="" selected disabled>Selecione um estado</option>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-              </select>
+            <input type="number" id="numero" name="numero">
+            <label for="name" class="warning"><small>Insira o número de sua residência</small></label>
           </div>
           <div class="form-group">
             <label for="telefone">Telefone:</label>
             <input type="text" id="telefone" name="telefone">
+            <label for="name" class="warning"><small>Insira seu telefone</small></label>
           </div>
           <div class="form-group">
             <label for="celular">Celular:</label>
             <input type="text" id="celular" name="celular">
+            <label for="name" class="warning"><small>Insira seu numero de celular</small></label>
           </div>
         </div>
-        <button   
-        class="banner-content-btn-cadastro" >
+        <button type="submit" id="cadBtn" class="banner-content-btn-cadastro" >
           Cadastrar
         </button>
       </form>
